@@ -116,11 +116,11 @@ function supprimerMembre(){
     
     $id = (int)$_GET["id"];
     
-    $supprimer = $bdd->prepare("DELETE FROM membres WHERE id = ?");
+    $supprimer = $bdd->prepare("DELETE FROM membres  WHERE id = ?");
     $supprimer->execute([$id]);
 
 }
-
+hhjjkkjssk
 
 
 
