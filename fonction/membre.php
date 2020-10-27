@@ -5,24 +5,26 @@ function inscription(){
 
 	$validation = true;
 	$erreur = [];
-	if (empty($pseudo) || empty($email) || empty($emailconf) || empty($password) || empty($passwordconf)) {
+	if (empty($pseudo) || empty($nom) || empty($prenom) || empty($email)  || empty($password) || empty($passwordconf)) {
 		 $validation = false;
 		 $erreur[] = "Tous les champs sont obligatoires";
 	}
 
-	if(existe($pseudo)){
+	if(existe($pseudo )){
 		$validation = false;
 		$erreur[] = "Ce pseudo est dejà pris";
 	}
+	
+	
+		
+
+	
 
 	if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 		$validation = false;
 		$erreur[] = "L'adresse e-mail n'est pas valide";
 	}
-	elseif ($emailconf != $email) {
-		$validation =false;
-		$erreur[] = "L'adresse e-mail de confirmation est incorrecte";
-	}
+	
 
 	if ($passwordconf != $password) {
 		$validation = false;
@@ -30,16 +32,20 @@ function inscription(){
 	}
 
 	if($validation) {
-        $inscription = $bdd->prepare("INSERT INTO membres(pseudo, email, password) VALUES(:pseudo, :email, :password)");
+        $inscription = $bdd->prepare("INSERT INTO membres(pseudo, nom, prenom, email, password) VALUES(:pseudo, :nom, :prenom, :email, :password)");
         $inscription->execute([
-            "pseudo" => htmlentities($pseudo),
+			"pseudo" => htmlentities($pseudo),
+			"nom" => htmlentities($nom),
+			"prenom" => htmlentities($prenom),
             "email" => htmlentities($email),
             "password" => password_hash($password, PASSWORD_DEFAULT)
         ]);
         
-        unset($_POST["pseudo"]);
+		unset($_POST["pseudo"]);
+		unset($_POST["nom"]);
+		unset($_POST["prenom"]);
         unset($_POST["email"]);
-        unset($_POST["emailconf"]);
+        
     }
     
     return $erreur;
@@ -83,7 +89,7 @@ function deconnexion(){
 function infos(){
 	global $bdd;
 
-	$membre = $bdd->prepare("SELECT pseudo, email FROM membres WHERE id = ?");
+	$membre = $bdd->prepare("SELECT membres.* FROM membres WHERE id = ?");
 	
 	$membre->execute([$_SESSION["membre"]]);
 	$membre = $membre->fetch();

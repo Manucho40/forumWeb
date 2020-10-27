@@ -69,11 +69,15 @@ if (!empty($_POST)) {
                     <input type="text" name="pseudo" placeholder="Pseudo *" value="<?php if(isset($_POST["pseudo"])) echo $_POST["pseudo"]; ?>">
                 </div>
                 <div class="col-sm-6 col-sm-offset-3">
-                    <input type="text" name="email" placeholder="Adresse e-mail *" value="<?php if(isset($_POST["email"])) echo $_POST["email"]; ?>">
+                    <input type="text" name="nom" placeholder="nom *" value="<?php if(isset($_POST["nom"])) echo $_POST["nom"]; ?>">
                 </div>
                 <div class="col-sm-6 col-sm-offset-3">
-                    <input type="text" name="emailconf" placeholder="Vérification de l'e-mail *" value="<?php if(isset($_POST["emailconf"])) echo $_POST["emailconf"]; ?>">
+                    <input type="text" name="prenom" placeholder="Prenom *" value="<?php if(isset($_POST["prenom"])) echo $_POST["prenom"]; ?>">
                 </div>
+                <div class="col-sm-6 col-sm-offset-3">
+                    <input type="text" name="email" placeholder="Adresse e-mail *" value="<?php if(isset($_POST["email"])) echo $_POST["email"]; ?>">
+                </div>
+                
                 <div class="col-sm-6 col-sm-offset-3">
                     <input type="password" name="password" placeholder="Mot de passe *">
                 </div>
@@ -87,13 +91,14 @@ if (!empty($_POST)) {
                 </div>
             </div>
         </form>
-        <footer>
+       
+    </div><br>
+    <footer>
             <div class="row">
                 <div class="col-xs-12">
-                    <a href="contact.php">Contact</a> - <a href="mentions.php">Mentions légales</a> - <a href="https://www.facebook.com/infoprog.tuto">Facebook</a>
+                    <a href="contact.php">Contact</a> - <a href="mentions.php">Mentions légales</a> - IUTEA
                 </div>
             </div>
-        </footer>
-    </div>
+    </footer>
 </body>
 </html>

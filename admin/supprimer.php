@@ -4,5 +4,5 @@ require_once "../fonction/bdd.php";
 $bdd = bdd();
 supprimerMembre();
 
-header("Location: posts.php");
+header("Location: G_membres.php");
 

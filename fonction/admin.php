@@ -1,4 +1,28 @@
 <?php 
+function nb_membres (){
+    global $bdd;
+    $nb_membres = $bdd->query("SELECT COUNT(*) FROM membres");
+	 $nb_membres = $nb_membres->fetch()[0];
+	 return $nb_membres;
+
+
+}
+function nb_articles (){
+    global $bdd;
+    $nb_articles = $bdd->query("SELECT COUNT(*) FROM articles");
+	 $nb_articles = $nb_articles->fetch()[0];
+	 return $nb_articles;
+
+
+}
+function nb_articles_filiere ($filiere){
+    global $bdd;
+    $nb_articles_informatiques = $bdd->prepare("SELECT COUNT(*) FROM articles where id_filiere = ?");
+    $nb_articles_informatiques->execute([$filiere]);
+    $nb_articles_informatiques = $nb_articles_informatiques->fetch()[0];
+    return $nb_articles_informatiques;
+
+}
 
 function liste(){
     global $bdd;
@@ -59,7 +83,7 @@ function supcompte(){
 
     global $bdd;
 
-    $compte = $bdd->query("SELECT id, pseudo FROM membres ORDER BY id DESC");
+    $compte = $bdd->query("SELECT membres.* FROM membres ORDER BY id DESC");
     $compte = $compte->fetchAll();
     return $compte;
 }
@@ -115,6 +139,16 @@ function supprimer(){
     $supprimer->execute([$id]);
 
 }
+function arti(){
+    global $bdd;
+    // SELECT id, id_filiere, titre, accroche, publication, image FROM articles
+    $articles = $bdd->query(" SELECT filiere.libelle, articles.id, articles.titre, articles.accroche, articles.publication, articles.image FROM filiere,articles where filiere.id=articles.id_filiere  ORDER BY id DESC");
+    $articles = $articles->fetchall();
+ 
+    return $articles;
+
+
+}
 
 function modifier(){
 	 global $bdd;
@@ -134,11 +168,37 @@ function modifier(){
             "id" => $id
         ]);
 
-        header("Location: posts.php");
+        header("Location: G_articles.php");
     }
     else
         $erreur .= "Les champs doivent contenir quelque chose";
         
     return $erreur;
+
+}
+function modifierParUtili(){
+    global $bdd;
+   
+   $erreur = "";
+   
+   extract($_POST);
+   
+   $id = (int)$_GET["id"];
+
+   if(!empty($titre) AND !empty($contenu)) {
+       $modifier = $bdd->prepare("UPDATE articles SET titre = :titre, accroche = :accroche, contenu = :contenu WHERE id = :id");
+       $modifier->execute([
+           "titre" => htmlentities($titre),
+           "accroche" => substr(htmlentities($contenu), 0, 200),
+           "contenu" => nl2br(htmlentities($contenu)),
+           "id" => $id
+       ]);
+
+       header("Location: posts.php");
+   }
+   else
+       $erreur .= "Les champs doivent contenir quelque chose";
+       
+   return $erreur;
 
 }

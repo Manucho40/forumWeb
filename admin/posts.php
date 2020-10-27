@@ -21,7 +21,7 @@ $supcomptes = supcompte();
     <title>Infoprog Admin - Posts</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,300,700">
-    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../maine.css">
 </head>
 <body>
     <header>

@@ -81,13 +81,14 @@ if (!empty($_POST)) {
                 </div>
             </div>
         </form>
-        <footer>
+        
+    </div>
+    <footer>
             <div class="row">
                 <div class="col-xs-12">
-                    <a href="contact.php">Contact</a> - <a href="mentions.php">Mentions légales</a> - <a href="https://www.facebook.com/infoprog.tuto">Facebook</a>
+                    <a href="contact.php">Contact</a> - <a href="mentions.php">Mentions légales</a> - IUTEA
                 </div>
             </div>
-        </footer>
-    </div>
+    </footer>
 </body>
 </html>

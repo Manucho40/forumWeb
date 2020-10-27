@@ -22,20 +22,20 @@ if (!empty($_POST)) {
     <title>Infoprog Admin - Modifier</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,300,700">
-    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../maine.css">
 </head>
 <body>
     <header>
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
-                    <a href="index.php">infoprog - admin</a>
+                    <a href="index.php">Admin</a>
                 </div>
                 <div class="col-sm-9">
                     <nav>
                         <ul>
-                            <li><a href="index.php">Nouveau post</a></li>
-                            <li><a href="posts.php">Anciens posts</a></li>
+                            <li><a href="index.php">Retour</a></li>
+                            
                         </ul>
                     </nav>
                 </div>

@@ -5,7 +5,7 @@ require_once "fonction/bdd.php";
 $bdd = bdd();
 $post = post();
 if (!empty($_POST)) {
-    $erreur = modifier();
+    $erreur = modifierParUtili();
 }
 
 

@@ -1,4 +1,0 @@
-Authname "Espace administrateur"
-Authtype Basic
-AuthUserFile "C:\wamp\www\blog\admin\.htpasswd"
-Require valid-user

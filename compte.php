@@ -56,19 +56,14 @@ $commentaires = commentaires_user();
                     <?=formatage_date($commentaire["publication"]);?>"
                         
                     </time> :</p>
-                <p><?= $commentaire["commentaire"];   ?></p>
+                <p style=" color:black; font-size: xx-large; font-family: serial;"><?= $commentaire["commentaire"];   ?></p>
             </div>
         </div>
          <?php 
             endforeach;
           ?>
-        <footer>
-            <div class="row">
-                <div class="col-xs-12">
-                    <a href="contact.php">Contact</a> - <a href="mentions.php">Mentions légales</a> - <a href="https://www.facebook.com/infoprog.tuto">Facebook</a>
-                </div>
-            </div>
-        </footer>
+        
     </div>
+    <?php include "footer.php"; ?>
 </body>
 </html>

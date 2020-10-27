@@ -29,6 +29,33 @@ if (!empty($_POST)) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,300,700">
     <link rel="stylesheet" href="maine.css">
     <script src="jquery-3.5.1.min.js"></script>
+    <style type="text/css">
+    article{
+        
+        background: black;
+        color:white;
+        
+       
+        text-align: center;
+        
+        border: solid 6px #a50400 !important;
+
+        /*Animated property*/
+        
+
+        /*Transition*/
+        transition: 1s;
+
+    }
+    article:hover{
+        transform: rotateY(360deg) scale(1.1);
+        border-radius: 15px;
+        border-color: black !important;
+        background-color: #a50400 !important;
+    }
+
+
+</style>
 </head>
 <body>
     <?php include "header.php"; ?>
@@ -61,15 +88,20 @@ if (!empty($_POST)) {
                 foreach ($mestopics as $topics) :
         ?>
             <div class="col-md-4 col-sm-6">
+            <a href="article.php?id=<?= $topics["id"]; ?>">
                 <article>
+                    
                     <h1><?= $topics["libelle"] ?></h1>
-                    <img src="img/<?= $topics["image"]; ?>" alt="<?= $topics["image"]; ?>">
-                    <p class="date">Posté le <time datetime="<?= $topics["publication"]; ?>"><?= formatage_date($topics["publication"]); ?></time></p>
                     <h1><?= $topics["titre"]; ?></h1>
-                    <p><?= $topics["accroche"]; ?>...</p>
-                    <a href="article.php?id=<?= $topics["id"]; ?>">Lire l'article</a>
+                    <p style="color: white;"><?= $topics["accroche"]; ?>...</p>
+                    <p style="color: white;" class="date">Posté le <time datetime="<?= $topics["publication"]; ?>"><?= formatage_date($topics["publication"]); ?></time></p>
+                    
+                    
+                   
                 </article>
+            </a>
             </div>
+         
 
         <?php 
                 endforeach;
@@ -80,13 +112,8 @@ if (!empty($_POST)) {
             
             
         </div>
-        <footer>
-            <div class="row">
-                <div class="col-xs-12">
-                    <a href="contact.php">Contact</a> - <a href="mentions.php">Mentions légales</a> - <a href="https://www.facebook.com/infoprog.tuto">Facebook</a>
-                </div>
-            </div>
-        </footer>
-    </div>
+        
+    </div><br><br><br><br><br><br>
+    <?php include "footer.php"; ?>
 </body>
 </html>

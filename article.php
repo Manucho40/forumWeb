@@ -54,7 +54,7 @@ if (!empty($_POST)) {
                 <div class="col-sm-7">
                     <p class="date">Posté le <time datetime="<?= $article["publication"] ?>"><?= formatage_date($article["publication"]) ?></time></p>
                     <h1><?= $article["titre"] ?></h1>
-                    <p><?= $article["contenu"] ?></p>
+                    <p  style="color: black; font-size: 20px;" ><?= $article["contenu"] ?></p>
                 </div>
             </article>
         </div>
@@ -115,13 +115,8 @@ if (!empty($_POST)) {
         <?php 
             endif;
          ?>
-        <footer>
-            <div class="row">
-                <div class="col-xs-12">
-                    <a href="contact.php">Contact</a> - <a href="mentions.php">Mentions légales</a> - <a href="https://www.facebook.com/infoprog.tuto">Facebook</a>
-                </div>
-            </div>
-        </footer>
+        
     </div>
+    <?php include "footer.php"; ?>
 </body>
 </html>

@@ -43,7 +43,7 @@ if (!empty($_POST)) {
        
         text-align: center;
         
-        border: solid 6px #a50400;
+        border: solid 6px #a50400 !important;
 
         /*Animated property*/
         
@@ -55,8 +55,8 @@ if (!empty($_POST)) {
     article:hover{
         transform: rotateY(360deg) scale(1.1);
         border-radius: 15px;
-        border-color: black;
-        background-color: #a50400;
+        border-color: black !important;
+        background-color: #a50400 !important;
     }
 
 
@@ -65,6 +65,7 @@ if (!empty($_POST)) {
     <?php include "header.php"; ?>
 
 
+    <link rel="stylesheet" href="maine.css">
     <div class="container article">
         
             <form method="post" action="index.php">
@@ -106,7 +107,7 @@ if (!empty($_POST)) {
             <div class="col-md-4 col-sm-6">
                 <a href="article.php?id=<?= $article["id"]; ?>">
                     <article>
-                        <br>
+                        
                     <h1 ><?= $article["libelle"]; ?></h1>
                     
                     
