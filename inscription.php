@@ -29,13 +29,18 @@ if (!empty($_POST)) {
 </head>
 <body>
     <?php include "header.php"; ?>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-12 col-sm-offset-3">
-                <h1>Inscription sur Infoprog !</h1>
+            <div class="col-xs-12 col-sm-offset-1">
+                <h1>Devenez dès à présent membre !</h1>
             </div>
         </div>
-        <form method="post" action="">
+
+        <style>
+   
+        
+        </style>
+        <form  method="post" action="">
             <?php 
             if(isset($erreurs)):
                 if ($erreurs) :
@@ -44,7 +49,7 @@ if (!empty($_POST)) {
                     
              ?>
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
+                <div class="col-sm-6 col-sm-offset-1">
                     <div class="message erreur"><?= $erreur ?></div>
                 </div>
             </div>
@@ -54,7 +59,7 @@ if (!empty($_POST)) {
 
              ?>
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
+                <div class="col-sm-6 col-sm-offset-1">
                     <div class="message confirmation">Votre inscription a bien été prise en compte !</div>
                 </div>
             </div>
@@ -65,40 +70,43 @@ if (!empty($_POST)) {
 
              ?>
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <input type="text" name="pseudo" placeholder="Pseudo *" value="<?php if(isset($_POST["pseudo"])) echo $_POST["pseudo"]; ?>">
+                <div class="col-sm-6 col-sm-offset-1">
+                    <input type="text" name="pseudo" placeholder="Pseudo *" value="<?php if(isset($_POST["pseudo"])) echo $_POST["pseudo"]; ?>" required="required">
                 </div>
-                <div class="col-sm-6 col-sm-offset-3">
-                    <input type="text" name="nom" placeholder="nom *" value="<?php if(isset($_POST["nom"])) echo $_POST["nom"]; ?>">
+                <div class="col-sm-6 col-sm-offset-1">
+                    <input type="text" name="nom" placeholder="nom *" value="<?php if(isset($_POST["nom"])) echo $_POST["nom"]; ?>" required="required">
                 </div>
-                <div class="col-sm-6 col-sm-offset-3">
-                    <input type="text" name="prenom" placeholder="Prenom *" value="<?php if(isset($_POST["prenom"])) echo $_POST["prenom"]; ?>">
+                <div class="col-sm-6 col-sm-offset-1">
+                    <input type="text" name="prenom" placeholder="Prenom *" value="<?php if(isset($_POST["prenom"])) echo $_POST["prenom"]; ?>" required="required">
                 </div>
-                <div class="col-sm-6 col-sm-offset-3">
-                    <input type="text" name="email" placeholder="Adresse e-mail *" value="<?php if(isset($_POST["email"])) echo $_POST["email"]; ?>">
+                <div class="col-sm-6 col-sm-offset-1">
+                    <input type="text" name="email" placeholder="Adresse e-mail *" value="<?php if(isset($_POST["email"])) echo $_POST["email"]; ?>" required="required">
                 </div>
                 
-                <div class="col-sm-6 col-sm-offset-3">
-                    <input type="password" name="password" placeholder="Mot de passe *">
+                <div class="col-sm-6 col-sm-offset-1">
+                    <input type="password" name="password" placeholder="Mot de passe *" required="required">
                 </div>
-                <div class="col-sm-6 col-sm-offset-3">
-                    <input type="password" name="passwordconf" placeholder="Vérification du mot de passe *">
+                <div class="col-sm-6 col-sm-offset-1">
+                    <input type="password" name="passwordconf" placeholder="Vérification du mot de passe *" required="required" >
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
+                <div class="col-sm-6 col-sm-offset-1">
                     <input type="submit" value="M'inscrire!">
                 </div>
             </div>
         </form>
        
     </div><br>
+    
     <footer>
             <div class="row">
                 <div class="col-xs-12">
                     <a href="contact.php">Contact</a> - <a href="mentions.php">Mentions légales</a> - IUTEA
                 </div>
             </div>
+           
+            
     </footer>
 </body>
 </html>

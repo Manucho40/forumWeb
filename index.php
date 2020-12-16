@@ -49,11 +49,11 @@ if (!empty($_POST)) {
         
 
         /*Transition*/
-        transition: 1s;
+        transition: 2s;
 
     }
     article:hover{
-        transform: rotateY(360deg) scale(1.1);
+        transform: (360deg) ;
         border-radius: 15px;
         border-color: black !important;
         background-color: #a50400 !important;
@@ -64,8 +64,26 @@ if (!empty($_POST)) {
 <body>
     <?php include "header.php"; ?>
 
+    <?php if (isset($_SESSION['notification']['message'])): ?>
+<div class="container">
+<div class="alert alert-<?= $_SESSION['notification']['type'] ?>">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                </button>'
+    <h4><?= $_SESSION['notification']['message'] ?></h4>
+    
+    </div>
 
-    <link rel="stylesheet" href="maine.css">
+
+
+</div>
+    
+
+
+    <?php $_SESSION['notification'] = []; ?>
+ 
+<?php endif;?>
+     
     <div class="container article">
         
             <form method="post" action="index.php">

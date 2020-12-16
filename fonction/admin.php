@@ -120,7 +120,7 @@ function supprimerMembre(){
     $supprimer->execute([$id]);
 
 }
-hhjjkkjssk
+
 
 
 
@@ -146,6 +146,20 @@ function arti(){
     $articles = $articles->fetchall();
  
     return $articles;
+
+
+}
+
+function art(){
+    global $bdd;
+		
+    // SELECT id, id_filiere, titre, accroche, publication, image FROM articles
+    $membre = $_SESSION["membre"];
+    $topics = $bdd->prepare(" SELECT filiere.libelle, articles.id, articles.id_membre, articles.titre, articles.accroche, articles.publication, articles.image FROM filiere,articles where filiere.id=articles.id_filiere AND articles.id_membre=?  ORDER BY id DESC");
+    $topics->execute([$membre]);
+    $topics = $topics->fetchall();
+
+    return $topics;
 
 
 }

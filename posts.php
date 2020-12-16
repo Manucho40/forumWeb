@@ -1,59 +1,154 @@
 <?php 
 session_start();
-include_once "fonction/admin.php";
 require_once "fonction/bdd.php";
+include_once "fonction/admin.php";
 $bdd = bdd();
-
-$posts = posts();
-
+$articles = art();
 
 
- ?>
+?>
 
 
 
 
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Infoprog Admin - Posts</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,300,700">
-    <link rel="stylesheet" href="maine.css">
-    <script src="jquery-3.5.1.min.js"></script>
-</head>
-<body>
-    <?php include "header.php"; ?>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>Anciens posts !</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <table>
-                    <?php 
-                        foreach ($posts as $post) :
-                          
-                     ?>
-                    <tr>
-                        <td><?= $post["titre"] ?></td>
-                        <td><a href="modifier.php?id=<?= $post["id"] ?>"  class="glyphicon glyphicon-pencil"></a></td>
-                        <td><a href="supprimer.php?id=<?= $post["id"] ?>" class="glyphicon glyphicon-remove"></a></td>
-                    </tr>
-                    <?php 
-                        endforeach;
+<html lang="en">
 
-                     ?>
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>GERER</title>
+
+  <!-- Custom fonts for this template -->
+  <link href="admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="admin/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="maine.css">
+  <!-- Custom styles for this page -->
+  <link href="admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+<?php include "header.php"; ?>
+
+  <!-- Page Wrapper -->
+<div id="wrapper">
+
+   
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+          <br><br>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800">ARTICLES</h1>
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Titre</th>
+                      <th>Filiere</th>
+                      <th>Accroche</th>
+                      <th>Modifier</th>
+                      <th>Supprimer</th>
+                      
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Titre</th>
+                      <th>Filiere</th>
+                      <th>Accroche</th>
+                      <th>Modifier</th>
+                      <th>Supprimer</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                  <?php  
+                    foreach($articles as $article) :
+                  ?>
+
+                    <tr>
+                      <td><?= $article["titre"];  ?></td>
+                      <td><?= $article["libelle"];  ?></td>
+                      <td><?= $article["accroche"];  ?></td>
+                      <td style="text-align: center;"><a href="modifier.php?id=<?= $article["id"] ?>"><i class="fas fa-edit" ></i></a></td>
+                      <td style="text-align: center;"><a href="supprimer.php?id=<?= $article["id"] ?>"><i class="fas fa-trash-alt"></i></a></td>
+                     
+                    </tr>
+                    <?php  
+                    endforeach;
+                    ?>
+
+                  </tbody>
                 </table>
+              </div>
             </div>
+          </div>
+
         </div>
-       
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <?php  include ("footer.php");  ?>
+      <!-- End of Footer -->
+
     </div>
-    <?php include "footer.php"; ?>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  
+
+    
+  <!-- Bootstrap core JavaScript-->
+  <script src="admin/vendor/jquery/jquery.min.js"></script>
+  <script src="admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="admin/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="admin/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="admin/js/demo/datatables-demo.js"></script>
+
 </body>
+
 </html>

@@ -26,7 +26,7 @@ $articles = arti();
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <link rel="stylesheet" href="../maine.css">
   <!-- Custom styles for this template -->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -128,7 +128,7 @@ $articles = arti();
                       <th>Titre</th>
                       <th>Filiere</th>
                       <th>Accroche</th>
-                      <th>Modifier</th>
+
                       <th>Supprimer</th>
                       
                     </tr>
@@ -138,7 +138,7 @@ $articles = arti();
                       <th>Titre</th>
                       <th>Filiere</th>
                       <th>Accroche</th>
-                      <th>Modifier</th>
+                      
                       <th>Supprimer</th>
                     </tr>
                   </tfoot>
@@ -151,7 +151,6 @@ $articles = arti();
                       <td><?= $article["titre"];  ?></td>
                       <td><?= $article["libelle"];  ?></td>
                       <td><?= $article["accroche"];  ?></td>
-                      <td style="text-align: center;"><a href="modifier.php?id=<?= $article["id"] ?>"><i class="fas fa-edit" ></i></a></td>
                       <td style="text-align: center;"><a href="supArticle.php?id=<?= $article["id"] ?>"><i class="fas fa-trash-alt"></i></a></td>
                      
                     </tr>

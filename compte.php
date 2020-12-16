@@ -51,12 +51,12 @@ $commentaires = commentaires_user();
          ?>
         <div class="row commentaire">
             <div class="col-xs-12">
-                <p class="date">Posté sur l'article "<?= $commentaire["titre"];?>" le 
+                <h1 class="date">Posté sur l'article "<?= $commentaire["titre"];?>" le 
                     <time datetime="<?= $commentaire["publication"];   ?>">
                     <?=formatage_date($commentaire["publication"]);?>"
                         
-                    </time> :</p>
-                <p style=" color:black; font-size: xx-large; font-family: serial;"><?= $commentaire["commentaire"];   ?></p>
+                    </time> :</h1>
+                <h1 class="lead"  style=" color:black;"><?= $commentaire["commentaire"];   ?></h1>
             </div>
         </div>
          <?php 

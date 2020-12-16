@@ -8,3 +8,6 @@ function bdd(){
 
 return $bdd;
 }
+
+
+

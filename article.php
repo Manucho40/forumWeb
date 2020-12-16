@@ -43,7 +43,7 @@ if (!empty($_POST)) {
         </div>
          </form>
         <div class="row">
-            <article>
+            <article class="container_article">
                 <div class="col-sm-12">
                     <h1><?= $article["libelle"] ?> - <?= $article["pseudo"] ?></h1>
 
@@ -58,7 +58,7 @@ if (!empty($_POST)) {
                 </div>
             </article>
         </div>
-    </div>
+    </div> <br>
     <div class="container commentaires">
         <div class="row">
             <div class="col-xs-12">

@@ -1,5 +1,21 @@
 <?php 
 
+function notif(){
+	global $bdd;
+	
+	$req = $bdd->query("SELECT * FROM commentaire where statu = 'unread'  order by publication DESC");
+    $req = $req->fetchall();
+
+    return $req;
+}
+
+function nb_notif(){
+	global $bdd;
+
+	 $nb_notif = $bdd->query("SELECT COUNT(*) FROM commentaire WHERE statu = 'unread'");
+	 $nb_notif = $nb_notif->fetch()[0];
+	 return $nb_notif;
+}
 
 function articles(){
     global $bdd;
@@ -39,13 +55,6 @@ function mestopics(){
 		    $topics = $topics->fetchall();
 
 		    return $topics;
-
-
-	
-	
-
-
-
 }
 
 function formatage_date($publication) {
@@ -121,16 +130,17 @@ function commenter(){
 	$erreur = "";
 
 	extract($_POST);
-
+		
 
 	if (!empty($commentaire)){
 		$id_article = (int)$_GET["id"];
-		$commenter = $bdd->prepare("INSERT INTO commentaire(id_membre, id_article, commentaire) VALUES(:id_membre, :id_article, :commentaire)");
+		$statu = "unread";
+		$commenter = $bdd->prepare("INSERT INTO commentaire(id_membre, id_article, commentaire, statu) VALUES(:id_membre, :id_article, :commentaire, :statu)");
 		$commenter->execute([
 			"id_membre" => $_SESSION["membre"],
 			"id_article" => $id_article,
-			"commentaire" => nl2br(htmlentities($commentaire))
-
+			"commentaire" => nl2br(htmlentities($commentaire)),
+			"statu" => $statu
 
 		]);
 		header("Location: article.php?id=" . $id_article);
