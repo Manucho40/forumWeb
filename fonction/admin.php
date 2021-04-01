@@ -61,7 +61,7 @@ function poster() {
             "id_filiere" => $filiere,
             "id_membre" => $id_membre,
             "titre" => htmlentities($titre),
-            "accroche" => substr(htmlentities($contenu), 0, 200),
+            "accroche" => substr(htmlentities($contenu), 0, 150),
             "contenu" => nl2br(htmlentities($contenu)),
             "image" => htmlentities($image)
             

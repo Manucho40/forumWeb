@@ -34,7 +34,7 @@ if (!empty($_POST)) {
     <script src="script.js"></script>
 
 </head>
-<style type="text/css">
+ <style type="text/css">
     article{
         
         background: black;
@@ -118,12 +118,14 @@ if (!empty($_POST)) {
         <?php 
         endif;  
          ?>
+         
         <div class="row">
-            <?php 
+        <?php 
                 foreach ($articles as $article) :
         ?>
-            <div class="col-md-4 col-sm-6">
-                <a href="article.php?id=<?= $article["id"]; ?>">
+            <div class="col-md-4 col-sm-6"> 
+                     
+            <a href="article.php?id=<?= $article["id"]; ?>">
                     <article>
                         
                     <h1 ><?= $article["libelle"]; ?></h1>
@@ -135,15 +137,12 @@ if (!empty($_POST)) {
                     
                 </article>
                     
-                </a>
+                </a> 
+                        
+                   
                 
             </div>
-
-        <?php 
-                endforeach;
-
-
-             ?>
+        <?php endforeach; ?>
             
             
             

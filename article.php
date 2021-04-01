@@ -42,19 +42,28 @@ if (!empty($_POST)) {
            
         </div>
          </form>
+         <style>
+         
+         
+      
+         
+         
+         
+         
+         </style>
         <div class="row">
             <article class="container_article">
-                <div class="col-sm-12">
+                <div class="col-lg-12">
                     <h1><?= $article["libelle"] ?> - <?= $article["pseudo"] ?></h1>
 
                 </div>
-                <div class="col-sm-5">
+                <div class="col-lg-5">
                     <img src="img/<?=$article["image"]; ?>" alt="<?=$article["image"] ?>">
                 </div>
-                <div class="col-sm-7">
+                <div class="col-lg-7">
                     <p class="date">Posté le <time datetime="<?= $article["publication"] ?>"><?= formatage_date($article["publication"]) ?></time></p>
                     <h1><?= $article["titre"] ?></h1>
-                    <p  style="color: black; font-size: 20px;" ><?= $article["contenu"] ?></p>
+                    <p class="conte"  style="color: black; font-size: 20px;" ><?= $article["contenu"] ?></p>
                 </div>
             </article>
         </div>

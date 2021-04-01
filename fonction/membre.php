@@ -133,7 +133,6 @@ function connexion() {
 	$connexion = $bdd->prepare("SELECT id, password FROM membres WHERE pseudo = ?");
     $connexion->execute([$pseudo]);
     $connexion = $connexion->fetch();
-    
     if(password_verify($password, $connexion["password"])) {
 
 		$stmt = $bdd->prepare("SELECT active FROM membres WHERE pseudo like :pseudo ");
@@ -173,9 +172,12 @@ function connexion() {
 
 
          
-    } else
-	$erreur = "Vos identifiants sont incorrectes";
-	return $erreur;
+    } else{
+		$erreur = "Vos identifiants sont incorrectes";
+		return $erreur;
+
+	}
+	
 
 
 

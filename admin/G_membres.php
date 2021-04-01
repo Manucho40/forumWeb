@@ -88,11 +88,11 @@ $supcomptes = supcompte();
         <i class="far fa-newspaper"></i>
           <span>ARTICLES</span></a>
       </li>
-      <li class="nav-item active">
+      <!-- <li class="nav-item active">
         <a class="nav-link" href="G_filieres.php">
         <i class="fas fa-book"></i>
           <span>FILIERES</span></a>
-      </li>
+      </li> -->
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">

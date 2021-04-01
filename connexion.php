@@ -66,13 +66,7 @@ if (!empty($_POST)) {
             </div>
         </form>
         
-    </div>
-    <footer>
-            <div class="row">
-                <div class="col-xs-12">
-                    <a href="contact.php">Contact</a> - <a href="mentions.php">Mentions légales</a> - IUTEA
-                </div>
-            </div>
-        </footer>
+    </div><br> <br><br><br><br><br><br><br><br><br><br>
+    <?php include "footer.php"; ?>  
 </body>
 </html>
