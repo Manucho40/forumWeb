@@ -43,10 +43,10 @@ function inscription(){
 		$validation = false;
 		$erreur[] = "Ce pseudo est dejà pris";
 	}
-	// if(existeMail($email)){
-	// 	$validation = false;
-	// 	$erreur[] = "Ce mail est dejà pris";
-	// }
+	if(existeMail($email)){
+		$validation = false;
+		$erreur[] = "Ce mail est dejà pris";
+	}
 	
 
 	if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -66,7 +66,7 @@ function inscription(){
        
 		
         $to = $email;
-		$subject = "http://localhost:8081". " - ACTIVATION DE COMPTE";
+		$subject = "http://localhost". " - ACTIVATION DE COMPTE";
 		
 		$cle = md5(microtime(TRUE)*100000);
 

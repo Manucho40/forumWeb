@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 16 déc. 2020 à 09:42
--- Version du serveur :  5.7.26
--- Version de PHP :  7.3.5
+-- Généré le : sam. 17 avr. 2021 à 08:54
+-- Version du serveur :  5.7.31
+-- Version de PHP : 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `blog`
+-- Base de données : `blog`
 --
 
 -- --------------------------------------------------------
@@ -39,15 +38,18 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `publication` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `image` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `articles`
 --
 
 INSERT INTO `articles` (`id`, `id_filiere`, `id_membre`, `titre`, `accroche`, `contenu`, `publication`, `image`) VALUES
-(4, 1, 59, 'WINDEV', 'CREATE TABLE  `comments`  (\r\n    `comment_id`  int(255)  NOT  NULL,\r\n    `comment_subject`  varchar(255)  NOT  NULL,\r\n    `comment_text`  text NOT  NULL,\r\n    `comment_status`  int(1)  NOT  NULL\r\n)  E', 'CREATE TABLE  `comments`  (<br />\r\n    `comment_id`  int(255)  NOT  NULL,<br />\r\n    `comment_subject`  varchar(255)  NOT  NULL,<br />\r\n    `comment_text`  text NOT  NULL,<br />\r\n    `comment_status`  int(1)  NOT  NULL<br />\r\n)  ENGINE=InnoDB DEFAULT  CHARSET=latin1;<br />\r\n <br />\r\nALTER TABLE  `comments`<br />\r\nADD PRIMARY KEY  (`comment_id`);<br />\r\nALTER TABLE  `comments`<br />\r\nMODIFY  `comment_id`  int(255)  NOT  NULL  AUTO_INCREMENT,  AUTO_INCREMENT=1;<br />\r\n', '2020-12-11 11:51:46', ''),
-(5, 3, 60, 'Comptabilit&eacute;', 'Vous &ecirc;tes-vous d&eacute;j&agrave; demand&eacute; comment les sites de m&eacute;dias sociaux affichent une notification pour chaque action sur votre calendrier ?\r\n\r\nCe syst&egrave;me de notificat', 'Vous &ecirc;tes-vous d&eacute;j&agrave; demand&eacute; comment les sites de m&eacute;dias sociaux affichent une notification pour chaque action sur votre calendrier ?<br />\r\n<br />\r\nCe syst&egrave;me de notification en temps r&eacute;el assure le suivi de toutes les actions que vous et vos amis effectuez sur ces canaux sociaux. Les notifications constituent une grande partie de la fonction d\'engagement en temps r&eacute;el de ces plates-formes. M&ecirc;me si vous n\'&ecirc;tes pas en ligne, vous pouvez toujours recevoir ces notifications. Un syst&egrave;me de notification PHP pourrait &ecirc;tre facilement construit en utilisant un m&eacute;lange de PHP et de JavaScript. Ce syst&egrave;me fournit une notification en temps r&eacute;el dans une application PHP.<br />\r\n<br />\r\nVous &ecirc;tes-vous d&eacute;j&agrave; demand&eacute; comment les sites de m&eacute;dias sociaux affichent une notification pour chaque action sur votre calendrier ?<br />\r\n<br />\r\nCe syst&egrave;me de notification en temps r&eacute;el assure le suivi de toutes les actions que vous et vos amis effectuez sur ces canaux sociaux. Les notifications constituent une grande partie de la fonction d\'engagement en temps r&eacute;el de ces plates-formes. M&ecirc;me si vous n\'&ecirc;tes pas en ligne, vous pouvez toujours recevoir ces notifications. Un syst&egrave;me de notification PHP pourrait &ecirc;tre facilement construit en utilisant un m&eacute;lange de PHP et de JavaScript. Ce syst&egrave;me fournit une notification en temps r&eacute;el dans une application PHP.', '2020-12-11 12:04:02', 'FB_IMG_1598776475224.jpg');
+(1, 1, 59, 'WINDEV', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br />\r\n<br />\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', '2021-04-16 16:04:48', ''),
+(3, 3, 59, 'Comptabilit&eacute;', 'On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et emp&ecirc;che de se concentrer sur l', 'On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et emp&ecirc;che de se concentrer sur la mise en page elle-m&ecirc;me. L\'avantage du Lorem Ipsum sur un texte g&eacute;n&eacute;rique comme \'Du texte. Du texte. Du texte.\' est qu\'il poss&egrave;de une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du fran&ccedil;ais standard. De nombreuses suites logicielles de mise en page ou &eacute;diteurs de sites Web ont fait du Lorem Ipsum leur faux texte par d&eacute;faut, et une recherche pour \'Lorem Ipsum\' vous conduira vers de nombreux sites qui n\'en sont encore qu\'&agrave; leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d\'y rajouter de petits clins d\'oeil, voire des phrases embarassantes).On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et emp&ecirc;che de se concentrer sur la mise en page elle-m&ecirc;me. L\'avantage du Lorem Ipsum sur un texte g&eacute;n&eacute;rique comme \'Du texte. Du texte. Du texte.\' est qu\'il poss&egrave;de une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du fran&ccedil;ais standard. De nombreuses suites logicielles de mise en page ou &eacute;diteurs de sites Web ont fait du Lorem Ipsum leur faux texte par d&eacute;faut, et une recherche pour \'Lorem Ipsum\' vous conduira vers de nombreux sites qui n\'en sont encore qu\'&agrave; leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d\'y rajouter de petits clins d\'oeil, voire des phrases embarassantes).On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et emp&ecirc;che de se concentrer sur la mise en page elle-m&ecirc;me. L\'avantage du Lorem Ipsum sur un texte g&eacute;n&eacute;rique comme \'Du texte. Du texte. Du texte.\' est qu\'il poss&egrave;de une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du fran&ccedil;ais standard. De nombreuses suites logicielles de mise en page ou &eacute;diteurs de sites Web ont fait du Lorem Ipsum leur faux texte par d&eacute;faut, et une recherche pour \'Lorem Ipsum\' vous conduira vers de nombreux sites qui n\'en sont encore qu\'&agrave; leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d\'y rajouter de petits clins d\'oeil, voire des phrases embarassantes).', '2021-04-16 16:07:26', 'manu.png'),
+(4, 4, 60, 'BOTANIQUE', '&Eacute; um facto estabelecido de que um leitor &eacute; distra&iacute;do pelo conte&uacute;do leg&iacute;vel de uma p&aacute;gina quando analisa a su', '&Eacute; um facto estabelecido de que um leitor &eacute; distra&iacute;do pelo conte&uacute;do leg&iacute;vel de uma p&aacute;gina quando analisa a sua mancha gr&aacute;fica. Logo, o uso de Lorem Ipsum leva a uma distribui&ccedil;&atilde;o mais ou menos normal de letras, ao contr&aacute;rio do uso de &quot;Conte&uacute;do aqui, conte&uacute;do aqui&quot;, tornando-o texto leg&iacute;vel. Muitas ferramentas de publica&ccedil;&atilde;o electr&oacute;nica e editores de p&aacute;ginas web usam actualmente o Lorem Ipsum como o modelo de texto usado por omiss&atilde;o, e uma pesquisa por &quot;lorem ipsum&quot; ir&aacute; encontrar muitos websites ainda na sua inf&acirc;ncia. V&aacute;rias vers&otilde;es t&ecirc;m evolu&iacute;do ao longo dos anos, por vezes por acidente, por vezes propositadamente (como no caso do humor).<br />\r\n&Eacute; um facto estabelecido de que um leitor &eacute; distra&iacute;do pelo conte&uacute;do leg&iacute;vel de uma p&aacute;gina quando analisa a sua mancha gr&aacute;fica. Logo, o uso de Lorem Ipsum leva a uma distribui&ccedil;&atilde;o mais ou menos normal de letras, ao contr&aacute;rio do uso de &quot;Conte&uacute;do aqui, conte&uacute;do aqui&quot;, tornando-o texto leg&iacute;vel. Muitas ferramentas de publica&ccedil;&atilde;o electr&oacute;nica e editores de p&aacute;ginas web usam actualmente o Lorem Ipsum como o modelo de texto usado por omiss&atilde;o, e uma pesquisa por &quot;lorem ipsum&quot; ir&aacute; encontrar muitos websites ainda na sua inf&acirc;ncia. V&aacute;rias vers&otilde;es t&ecirc;m evolu&iacute;do ao longo dos anos, por vezes por acidente, por vezes propositadamente (como no caso do humor).', '2021-04-16 16:08:17', ''),
+(5, 3, 60, 'MATH FIN', '&Eacute; um facto estabelecido de que um leitor &eacute; distra&iacute;do pelo conte&uacute;do leg&iacute;vel de uma p&aacute;gina quando analisa a su', '&Eacute; um facto estabelecido de que um leitor &eacute; distra&iacute;do pelo conte&uacute;do leg&iacute;vel de uma p&aacute;gina quando analisa a sua mancha gr&aacute;fica. Logo, o uso de Lorem Ipsum leva a uma distribui&ccedil;&atilde;o mais ou menos normal de letras, ao contr&aacute;rio do uso de &quot;Conte&uacute;do aqui, conte&uacute;do aqui&quot;, tornando-o texto leg&iacute;vel. Muitas ferramentas de publica&ccedil;&atilde;o electr&oacute;nica e editores de p&aacute;ginas web usam actualmente o Lorem Ipsum como o modelo de texto usado por omiss&atilde;o, e uma pesquisa por &quot;lorem ipsum&quot; ir&aacute; encontrar muitos websites ainda na sua inf&acirc;ncia. V&aacute;rias vers&otilde;es t&ecirc;m evolu&iacute;do ao longo dos anos, por vezes por acidente, por vezes propositadamente (como no caso do humor).<br />\r\n&Eacute; um facto estabelecido de que um leitor &eacute; distra&iacute;do pelo conte&uacute;do leg&iacute;vel de uma p&aacute;gina quando analisa a sua mancha gr&aacute;fica. Logo, o uso de Lorem Ipsum leva a uma distribui&ccedil;&atilde;o mais ou menos normal de letras, ao contr&aacute;rio do uso de &quot;Conte&uacute;do aqui, conte&uacute;do aqui&quot;, tornando-o texto leg&iacute;vel. Muitas ferramentas de publica&ccedil;&atilde;o electr&oacute;nica e editores de p&aacute;ginas web usam actualmente o Lorem Ipsum como o modelo de texto usado por omiss&atilde;o, e uma pesquisa por &quot;lorem ipsum&quot; ir&aacute; encontrar muitos websites ainda na sua inf&acirc;ncia. V&aacute;rias vers&otilde;es t&ecirc;m evolu&iacute;do ao longo dos anos, por vezes por acidente, por vezes propositadamente (como no caso do humor).', '2021-04-16 16:08:44', ''),
+(6, 1, 60, 'DEV WEB', 'Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeu', 'Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak met letters nam en ze door elkaar husselde om een font-catalogus te maken. Het heeft niet alleen vijf eeuwen overleefd maar is ook, vrijwel onveranderd, overgenomen in elektronische letterzetting. Het is in de jaren \'60 populair geworden met de introductie van Letraset vellen met Lorem Ipsum passages en meer recentelijk door desktop publishing software zoals Aldus PageMaker die versies van Lorem Ipsum bevatten.Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak met letters nam en ze door elkaar husselde om een font-catalogus te maken. Het heeft niet alleen vijf eeuwen overleefd maar is ook, vrijwel onveranderd, overgenomen in elektronische letterzetting. Het is in de jaren \'60 populair geworden met de introductie van Letraset vellen met Lorem Ipsum passages en meer recentelijk door desktop publishing software zoals Aldus PageMaker die versies van Lorem Ipsum bevatten.Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak met letters nam en ze door elkaar husselde om een font-catalogus te maken. Het heeft niet alleen vijf eeuwen overleefd maar is ook, vrijwel onveranderd, overgenomen in elektronische letterzetting. Het is in de jaren \'60 populair geworden met de introductie van Letraset vellen met Lorem Ipsum passages en meer recentelijk door desktop publishing software zoals Aldus PageMaker die versies van Lorem Ipsum bevatten.', '2021-04-16 16:09:20', '');
 
 -- --------------------------------------------------------
 
@@ -64,18 +66,14 @@ CREATE TABLE IF NOT EXISTS `commentaire` (
   `publication` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `statu` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `commentaire`
 --
 
 INSERT INTO `commentaire` (`id`, `id_membre`, `id_article`, `commentaire`, `publication`, `statu`) VALUES
-(1, 60, 4, 'SUPER<br />\r\n', '2020-12-11 11:52:26', NULL),
-(2, 61, 4, 'Tres bien', '2020-12-12 15:03:50', NULL),
-(3, 61, 4, 'SUPER', '2020-12-12 15:04:12', NULL),
-(4, 59, 5, 'SUPER', '2020-12-13 15:14:50', 'unread'),
-(5, 59, 5, 'Cool', '2020-12-13 16:33:33', 'unread');
+(1, 59, 6, 'Super ton article', '2021-04-16 20:17:32', 'unread');
 
 -- --------------------------------------------------------
 
@@ -90,15 +88,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `comment_text` text NOT NULL,
   `comment_status` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`comment_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `comments`
---
-
-INSERT INTO `comments` (`comment_id`, `comment_subject`, `comment_text`, `comment_status`) VALUES
-(1, 'INFORMATIQUE', 'INFORMATIQUE', 0),
-(2, 'INFORMATIQUE', 'INFORMATIQUE', 0);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -119,8 +109,8 @@ CREATE TABLE IF NOT EXISTS `filiere` (
 
 INSERT INTO `filiere` (`id`, `libelle`) VALUES
 (1, 'INFORMATIQUE'),
-(2, 'BATIMENT ET CONSTRUCTION'),
-(3, 'ADMINISTRATION DES ENTREPRISES'),
+(2, 'BAT ET CONSTRUCTION'),
+(3, 'AD ENTREPRISES'),
 (4, 'AGROECOLOGIE');
 
 -- --------------------------------------------------------
@@ -141,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `membres` (
   `create_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `cle` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `membres`
@@ -150,7 +140,8 @@ CREATE TABLE IF NOT EXISTS `membres` (
 INSERT INTO `membres` (`id`, `pseudo`, `email`, `password`, `nom`, `prenom`, `active`, `create_at`, `cle`) VALUES
 (59, 'Manucho', 'rickypaine40@gmail.com', '$2y$10$2pHA8TY237hqQlla0emVGeFbLkAm643I1Mrm1PtHzysskqZ3EXidW', 'Tehe', 'Carmelle', 1, '2020-12-11 08:23:02', '7037df12a3c07d73b24511d6bf665eb2'),
 (60, 'Ricky', 'rickypaine40@gmail.com', '$2y$10$1j363qPqJ1reVncPg7cpO.pHNLkIKM0xkLaoK13rwfV7BHSH2MKDy', 'Tehe', 'Beno&icirc;t', 1, '2020-12-11 09:04:09', '212ee8a281ee7d13c2255b10671dae79'),
-(61, 'Manucho14', 'rickypaine40@gmail.com', '$2y$10$LXjKJpKqTZj/sVG1A5VMz.qk5UKhAtbZQHPv47WAtDHLxqgOzrCxG', 'Tehe', 'Beno&icirc;t', 1, '2020-12-12 15:00:39', '51994407037e6cacf7e7eaa6179057b1');
+(61, 'carmelle', 'vzh79536@zwoho.com', '$2y$10$PPAlgunV6RakIjDW4WzbQevcCxv5IZd074DVeG2vSeNbQrb6EzSAu', 'Tehe', 'Beno&icirc;t', 0, '2021-04-16 21:44:17', 'd1b7c82d2ac8c843113ad926e00ea4e3'),
+(62, 'as', 'kkw15916@eoopy.com', '$2y$10$NzG7Sf1mI3S4LAfHfsJVGu3azMsv.lvT6bfEdfe3cjVtBvIYSJaSG', 'eknksksd', 'Carmelle', 0, '2021-04-16 21:48:50', '2aa91beca12b27ec90f0870b1878006e');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

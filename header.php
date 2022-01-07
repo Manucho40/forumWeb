@@ -65,7 +65,7 @@
     <!-- notification -->
 
 
-    <style>
+    <!-- <style>
         .fa-bell{
           color:white;
           
@@ -121,7 +121,7 @@
                                 ?>
                             </div>
       </li>
-    
+     -->
     <!-- notification -->
     <li class="nav-item active">
       <a class="nav-link" href="deconnexion.php" style=" font-weight: bold;">Déconnexion <span class="sr-only">(current)</span></a>

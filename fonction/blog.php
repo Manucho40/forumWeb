@@ -71,13 +71,11 @@ function formatage_date($publication) {
 
 function nb_commentaires(){
 	global $bdd;
-
 	$id_article =(int)$_GET["id"];
-
-	 $nb_commentaires = $bdd->prepare("SELECT COUNT(*) FROM commentaire WHERE id_article = ?");
-	 $nb_commentaires->execute([$id_article]);
-	 $nb_commentaires = $nb_commentaires->fetch()[0];
-	 return $nb_commentaires;
+	$nb_commentaires = $bdd->prepare("SELECT COUNT(*) FROM commentaire WHERE id_article = ?");
+	$nb_commentaires->execute([$id_article]);
+	$nb_commentaires = $nb_commentaires->fetch()[0];
+	return $nb_commentaires;
 }
 
 

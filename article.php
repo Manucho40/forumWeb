@@ -69,11 +69,15 @@ if (!empty($_POST)) {
         </div>
     </div> <br>
     <div class="container commentaires">
+
+
         <div class="row">
             <div class="col-xs-12">
                 <h1>Commentaires (<?=$nb_commentaire ?>)</h1>
             </div>
         </div>
+
+        
         <?php 
             foreach ($commentaires as $commentaire) :
          ?>
